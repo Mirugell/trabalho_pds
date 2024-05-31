@@ -6,15 +6,5 @@ class usuario
 {
 private:
     std::vector<std::string> usuarios; 
-public:
-    
+
 };
-
-usuario::usuario(/* args */)
-{
-}
-
-usuario::~usuario()
-{
-}
-
