@@ -1,8 +1,9 @@
 #include <iostream>
 #include "tarefas.hpp"
 
-tarefas tarefas::criaTarefa(){
+tarefas tarefas::criaTarefa(std::vector<projeto>& projetos){
     tarefas novaTarefa;
+    int numeroDoProjeto;
     std::cout << "\nCriando nova tarefa...\n";
     std::cin.ignore();
     std::cout << "Titulo: " <<std::endl;
@@ -11,6 +12,9 @@ tarefas tarefas::criaTarefa(){
     std::getline(std::cin, novaTarefa.descricaoTarefa); 
     std::cout << "Status: "<<std::endl;
     std::getline(std::cin, novaTarefa.statusTarefa);
+    std::cout << "Projeto: " << std::endl;
+    std::cin >> numeroDoProjeto;
+    novaTarefa.projetoTarefa->tituloProjeto=projetos[numeroDoProjeto-1].tituloProjeto; 
 
     return novaTarefa;
 
@@ -52,10 +56,11 @@ void tarefas::listarTarefas(std::vector<tarefas> tarefas){
     }
 
     std::cout << "\nLista de Tarefas:\n";
-    for (int i = 0; i < tarefas.size(); i++) {
+    for (int i = 0, n = tarefas.size(); i < n; i++) {
         std::cout << "\nTarefa " << i + 1 << ":\n";
         std::cout << "Titulo: " << tarefas[i].tituloTarefa << std::endl;
         std::cout << "Descricao: " << tarefas[i].descricaoTarefa << std::endl;
         std::cout << "Status: " << tarefas[i].statusTarefa << std::endl;
+        std::cout << "Projeto: " << tarefas[i].projetoTarefa->tituloProjeto << std::endl;
     }
 }
