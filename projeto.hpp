@@ -7,7 +7,7 @@
 class projeto
 {
 private:
-    std::string descricaoProjeto;
+    std::string descricaoProjeto; 
 
 public:
     std::string tituloProjeto;

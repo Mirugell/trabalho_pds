@@ -12,12 +12,18 @@ tarefas tarefas::criaTarefa(std::vector<projeto>& projetos){
     std::getline(std::cin, novaTarefa.descricaoTarefa); 
     std::cout << "Status: "<<std::endl;
     std::getline(std::cin, novaTarefa.statusTarefa);
-    std::cout << "Projeto: " << std::endl;
+    std::cout << "Número do Projeto: " << std::endl;
     std::cin >> numeroDoProjeto;
-    novaTarefa.projetoTarefa->tituloProjeto=projetos[numeroDoProjeto-1].tituloProjeto; 
-
-    return novaTarefa;
-
+    if (numeroDoProjeto-1 > projetos.size() || projetos.size()==0) //transformar isso aqui em variavel
+    {
+        std::cout << "Projeto inexistente" << std::endl;
+        novaTarefa.projetoTarefa->tituloProjeto="Não encontrado";
+        return novaTarefa;
+    }
+    else{
+        novaTarefa.projetoTarefa->tituloProjeto=projetos[numeroDoProjeto-1].tituloProjeto;
+        return novaTarefa;
+    } 
 }
 
 int tarefas::editaTarefa(){

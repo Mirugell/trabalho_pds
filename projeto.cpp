@@ -24,7 +24,16 @@ void projeto::listarProjetos(std::vector<projeto> projetos){
         std::cout << "\nProjeto " << i + 1 << ":\n";
         std::cout << "Titulo: " << projetos[i].tituloProjeto << std::endl;
         std::cout << "Descricao: " << projetos[i].descricaoProjeto << std::endl;
-        std::cout << "Endereço: " << &projetos[i].tituloProjeto;
+        //std::cout << "Tarefas: ";
+        //for (int j=0, n=tarefas.size(); j < n; j++)
+        //{
+            //if (tarefas[j].projetoTarefa->tituloProjeto==projetos[i].tituloProjeto)
+            //{
+                //std::cout << tarefas[j].tituloTarefa << std::endl;
+            //}
+            
+        //}
+        
     }
 }
 
