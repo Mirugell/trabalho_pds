@@ -36,4 +36,3 @@ void projeto::listarProjetos(std::vector<projeto> projetos){
         
     }
 }
-

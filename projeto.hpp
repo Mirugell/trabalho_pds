@@ -11,9 +11,9 @@ private:
 
 public:
     std::string tituloProjeto;
-    projeto criaProjeto();
+    //projeto criaProjeto();
     void listarProjetos(std::vector<projeto> projetos);
-    projeto editaProjeto();
+    //projeto editaProjeto();
 };
 
 #endif

@@ -5,37 +5,40 @@ void mostrarMenu();
 
 int main(int argc, char const *argv[])
 {
-    std::vector<tarefas> vetorTarefas;
-    std::vector<projeto> vetorProjetos;
-    int opcao;
-    tarefas tarefa;
-    projeto projeto;
 
-    do {
-        mostrarMenu();
-        std::cout << "Digite sua opcao: ";
-        std::cin >> opcao;
+    tarefas tarefa("TAREFA01", "teste", "a fazer");
+    tarefa.imprimir();
+    //std::vector<tarefas> vetorTarefas;
+    //std::vector<projeto> vetorProjetos;
+    //int opcao;
+    //tarefas tarefa;
+    //projeto projeto;
 
-        switch (opcao) {
-            case 1:
-                vetorTarefas.push_back(tarefa.criaTarefa(vetorProjetos));
-                break;
-            case 2:
-                tarefa.listarTarefas(vetorTarefas);
-                break;
-            case 3:
-                vetorProjetos.push_back(projeto.criaProjeto());
-                break;
-            case 4:
-                projeto.listarProjetos(vetorProjetos);
-                break;
-            case 5:
-                std::cout << "\nSaindo do programa...\n";
-                break;
-            default:
-                std::cout << "\nOpcao invalida. Tente novamente.\n";
-        }
-    } while (opcao != 5);
+    //do {
+        //mostrarMenu();
+        //std::cout << "Digite sua opcao: ";
+        //std::cin >> opcao;
+
+        //switch (opcao) {
+            //case 1:
+                //vetorTarefas.push_back(tarefa.criaTarefa(vetorProjetos));
+                //break;
+            //case 2:
+                //tarefa.listarTarefas(vetorTarefas);
+                //break;
+            //case 3:
+                //vetorProjetos.push_back(projeto.criaProjeto());
+                //break;
+            //case 4:
+                //projeto.listarProjetos(vetorProjetos);
+                //break;
+            //case 5:
+                //std::cout << "\nSaindo do programa...\n";
+                //break;
+            //default:
+                //std::cout << "\nOpcao invalida. Tente novamente.\n";
+        //}
+    //} while (opcao != 5);
 
     return 0;
 }

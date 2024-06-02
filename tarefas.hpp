@@ -1,20 +1,24 @@
 #include <iostream>
 #include "projeto.hpp"
+#include "base.hpp"
 #ifndef TAREFAS_HPP
 #define TAREFAS_HPP
+//class projeto; 
 
-class tarefas
+class tarefas : public Base
 {
 private:
-    std::string tituloTarefa;
-    std::string descricaoTarefa;
     std::string statusTarefa;
-    projeto* projetoTarefa;
+    //projeto* projetoTarefa;
 
 public:
-    int editaTarefa();
-    tarefas criaTarefa(std::vector<projeto>& projetos);
-    void listarTarefas(std::vector<tarefas> tarefas);
+    tarefas(std::string titulo, std::string descricao, std::string status);
+    //~tarefas();
+
+    virtual void imprimir() override;
+
 };
 
+
 #endif
+
