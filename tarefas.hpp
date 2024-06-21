@@ -8,14 +8,15 @@
 class tarefas : public Base
 {
 private:
-    std::string statusTarefa;
     //projeto* projetoTarefa;
 
 public:
+    std::string statusTarefa;
     tarefas(std::string titulo, std::string descricao, std::string status);
     //~tarefas();
 
-    virtual void imprimir() override;
+    virtual void imprimir(std::vector<Base*> vetorBase) override;
+    virtual Base* cria() override;
 
 };
 

@@ -3,10 +3,32 @@
 
 tarefas::tarefas(std::string titulo, std::string descricao, std::string status) : Base(titulo,descricao), statusTarefa(status){}
 
-void tarefas::imprimir(){
-    Base::imprimir();
-    std::cout << "Status: " << this->statusTarefa << std::endl;
+void tarefas::imprimir(std::vector<Base*> vetorBase){
+    Base::imprimir(vetorBase);
+    for (int i = 0, n=vetorBase.size(); i < n; i++)
+    {
+        if (tarefas* tarefa = dynamic_cast<tarefas*>(vetorBase[i])){ //procura no vetor de ponteiros do tipo base se o objeto que esta sendo apontado é do tipo tarefas
+            std::cout << "Status: " << tarefa->statusTarefa << std::endl; //tarefa declarada dentro do if 
+        }
+    }
 }
+
+Base* tarefas::cria() {
+    std::string titulo, descricao, status;
+    std::cin.ignore();
+    std::cout << "Insira o Título: ";
+    std::getline(std::cin, titulo);
+
+    std::cout << "Insira a descrição: ";
+    std::getline(std::cin, descricao);
+
+    std::cout << "Insira status: ";
+    std::getline(std::cin, status);
+
+    return new tarefas(titulo, descricao, status); //o ponteiro vai apontar para uma tarefa
+}
+
+
 
 //tarefas tarefas::criaTarefa(std::vector<projeto>& projetos){
     //tarefas novaTarefa;
